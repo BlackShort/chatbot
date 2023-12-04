@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url(./assets/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: left;
+  backdrop-filter: brightness(0.5);
+  overflow: hidden;
+}
+
+.active-link {
+  background: #ffffff12;
+}
+
+.Sidebar {
+  transition: left 0.5s ease-in-out;
+  animation: left 0.5s ease-in-out;
+}
+
+.side-btn {
+  transition: 0.3s ease-in-out;
+}
+
+.ProfileAnimation {
+  transition: 0.3s ease-in-out;
+  animation: zoom 0.25s ease-in-out;
+}
+
+.StretchAnimation {
+  transition: 0.2s ease-in-out;
+  animation: Strech 0.25s ease-in-out;
+}
+
+@keyframes zoom {
+  0% {
+    scale: 0.5;
+  }
+
+  99% {
+    scale: 1;
+  }
+}
+
+@keyframes Strech {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 0;
+  transition: 0.4s;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: gray;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 10px;
+  background: rgb(102, 101, 101);
+  transition: 0.2s;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.ChatBar::-webkit-scrollbar {
+  width: 10px;
+  height: 0;
+  transition: 0.4s;
+}
+
+.ChatBar:hover::-webkit-scrollbar-thumb {
+  background: gray;
+  border: 1px solid #222324;
+}
+
+.ChatBar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.ChatBar::-webkit-scrollbar-thumb:hover {
+  background: rgb(112, 112, 112);
+}
+
+.ChatBar:hover {
+  animation: ease-in-out 0.4s;
+  animation-delay: 1s;
+}
+
+
+.App_Navbar {
+  width: -webkit-fill-available;
+  min-height: 4em;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+
+  .logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+
+    .username {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #cdcdcd;
+    }
+
+    .login-button {
+      width: 130px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid #cdcdcd;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1em;
+      color: #cdcdcd;
+      font-weight: 500;
+      margin-left: 40px;
+      transition: 0.5s;
+
+    }
+
+    .login-button:hover {
+      background: #cdcdcd;
+      color: #3e3a3a;
+    }
+  }
+
+}
+
+.Home_Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  // background: transparent;
+  background: #0000004f;
+  border: 2px solid rgba(126, 124, 124, 0.5);
+  border-radius: 2em;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: height .2s ease;
+
+  .form-box {
+    width: 100%;
+    padding: 40px;
+
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+
+    }
+
+    .input-box {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      border-bottom: 2px solid #fff;
+      margin: 30px 0;
+
+      label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: 1em;
+        font-weight: 500;
+        pointer-events: none;
+        transition: .5s;
+        color: #fff;
+
+      }
+
+      input:focus~label,
+      input:valid~label {
+        top: -5px;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: #fff;
+        padding: 0 35px 0 5px;
+
+      }
+
+      .icon {
+        position: absolute;
+        right: 8px;
+        font-size: 1.2em;
+        color: #cfcbcb;
+        line-height: 57px;
+
+        svg {
+          fill: #cfcbcb;
+          width: 1.2em;
+          height: 1.2em;
+        }
+      }
+    }
+
+    .remember-forget {
+      font-size: 0.9em;
+      color: #a1a0a0;
+      font-weight: 500;
+      margin: -15px 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      label {
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        accent-color: #c7c2c2;
+        margin-right: 1em;
+      }
+
+      a {
+        color: #c7c2c2;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      height: 45px;
+      background: rgb(2, 99, 128);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .login-register {
+      font-size: .9em;
+      color: #c7c2c2;
+      text-align: center;
+      font-weight: 500;
+      margin: 25px 0 10px;
+
+      a {
+        color: #c7c2c2;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
